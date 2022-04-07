@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>Step1</title>
+  </head>
+  <body>
+    ・ユーザー名：
+    <input
+      type="text"
+      id="UserName"
+    />
+    
+    <p>・タスク：
+    <textarea
+      id="Task"
+    ></textarea></p>
+
+    <p>・
+    <input
+      type="button"
+      value="登録"
+      onclick="onClickButton()"
+    /></p>
+
+    <div id="todo-list">
+      <table id = "Table">
+    </div>
+    
+    <script>
+      const tasksList = [];
+      const onClickButton = () => {
+        const UserName = document.querySelector("#UserName");
+        const Task = document.querySelector("#Task");
+        const Table = document.querySelector("#Table");
+
+        tasksList.push({name:UserName.value, task:Task.value});
+        tasksList.forEach((t, idx) => console.log(`${idx}:${t.name}, ${t.task}`));
+
+        insertTask(Table, UserName.value, Task.value);
+      };
+
+      const insertTask = (Table, UserName, Task) => {
+        let newRow = Table.insertRow(); //行の追加
+        let newCell = newRow.insertCell(); //セルの追加
+        let newText = document.createTextNode(UserName); //セルの中に入れるテキストを生成
+        newCell.appendChild(newText); //セルの中にテキストを入れる
+
+        let taskCell = newRow.insertCell();
+        let taskText = document.createTextNode(Task);
+        taskCell.appendChild(taskText);
+      };
+    </script>
+  </body>
+</html>

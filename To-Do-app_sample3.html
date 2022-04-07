@@ -27,9 +27,11 @@
       const onClickButton = () => {
         const UserName = document.querySelector("#UserName");
         const Task = document.querySelector("#Task");
-        console.log(name.value, task.value);
-      };
+        console.log(UserName.value, Task.value);
 
+        list.push({name:UserName.value, task:Task.value});
+        list.forEach((t, idx) => console.log(`${idx}:${t.name}, ${t.task}`));
+      };
     </script>
   </body>
 </html>
