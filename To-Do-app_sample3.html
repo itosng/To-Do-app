@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>Step1</title>
+  </head>
+  <body>
+    ・ユーザー名：
+    <input
+      type="text"
+      id="UserName"
+    />
+    
+    <p>・タスク：
+    <textarea
+      id="Task"
+    ></textarea></p>
+
+    <p>・
+    <input
+      type="button"
+      value="登録"
+      onclick="onClickButton()"
+    /></p>
+    
+    <script>
+      const list = [];
+      const onClickButton = (msg) => {
+      //console.log(document.getElementById("UserName").value);  
+      //console.log(document.getElementById("Task").value);
+      console.log(document.getElementById("Task").value);
+      };
+    </script>
+  </body>
+</html>
